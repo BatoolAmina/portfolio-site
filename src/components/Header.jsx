@@ -28,10 +28,9 @@ const Header = () => {
     setIsOpen(false);
   };
 
-  // New function to open resume in a new tab
   const handleResumeDownload = () => {
     window.open(
-      'https://drive.google.com/file/d/1ZweCNw-N7qVtCY_G11TkVRyW8i0-htav/view?usp=drive_link',
+      'https://drive.google.com/file/d/1c0yKSn_Pk09q0EzqYGQkB4hjwOZC58aG/view?usp=drive_link',
       '_blank'
     );
   };
