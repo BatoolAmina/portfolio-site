@@ -15,8 +15,7 @@ const Contact = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setStatus({ type: 'sending', message: 'Sending...' });
-    const backendUrl = 'http://localhost:5000/api/send'; // IMPORTANT: Update this for deployment
-
+    const backendUrl = import.meta.env.VITE_BACKEND_URL + '/api/send';
     try {
       const res = await fetch(backendUrl, {
         method: 'POST',
