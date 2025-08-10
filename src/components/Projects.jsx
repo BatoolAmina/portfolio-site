@@ -38,7 +38,7 @@ const Projects = () => {
     { 
       title: 'Coming Soon', 
       description: 'AI/ML based project', 
-      img: 'https://placehold.co/600x400/1a202c/c4b5fd?text=Coming+Soon', 
+      img: 'https://placehold.co/600x400/1a202c/c4c4c4?text=Coming+Soon', 
       link: '#' 
     },
   ];
@@ -47,9 +47,7 @@ const Projects = () => {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
+      transition: { staggerChildren: 0.15 }
     }
   };
 
@@ -60,17 +58,46 @@ const Projects = () => {
 
   return (
     <AnimatedSection>
-      <div id="projects" className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center text-white mb-16">My Projects</h2>
-        <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" variants={containerVariants} initial="hidden" animate="show">
+      <div id="projects" className="container mx-auto px-6 max-w-7xl">
+        <h2 className="text-4xl font-bold text-center text-gray-300 mb-16 select-none">
+          My Projects
+        </h2>
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+          variants={containerVariants} 
+          initial="hidden" 
+          animate="show"
+        >
           {projects.map((project, index) => (
-            <motion.div key={index} className="bg-gray-800 rounded-lg overflow-hidden shadow-lg flex flex-col" variants={itemVariants} whileHover={{ y: -8, boxShadow: "0px 10px 20px rgba(0,0,0,0.2)" }} transition={{ type: 'spring', stiffness: 300 }}>
-              <img src={project.img} alt={project.title} className="w-full h-56 object-cover" />
+            <motion.div 
+              key={index} 
+              className="bg-gray-800 rounded-lg overflow-hidden shadow-md flex flex-col
+                border border-gray-700 hover:border-gray-500
+                transition-all duration-300"
+              variants={itemVariants} 
+              whileHover={{ y: -6, boxShadow: "0 8px 20px rgba(0,0,0,0.4)" }}
+              transition={{ type: 'spring', stiffness: 280 }}
+            >
+              <img 
+                src={project.img} 
+                alt={project.title} 
+                className="w-full h-56 object-cover select-none" 
+                draggable={false} 
+              />
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4 flex-grow">{project.description}</p>
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 font-semibold inline-flex items-center group mt-auto">
-                  View Project <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <h3 className="text-2xl font-semibold text-gray-200 mb-2 tracking-wide">
+                  {project.title}
+                </h3>
+                <p className="text-gray-400 mb-6 flex-grow leading-relaxed">
+                  {project.description}
+                </p>
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-300 hover:text-gray-100 font-semibold inline-flex items-center gap-2 select-none"
+                >
+                  View Project <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
               </div>
             </motion.div>
@@ -80,4 +107,5 @@ const Projects = () => {
     </AnimatedSection>
   );
 };
+
 export default Projects;

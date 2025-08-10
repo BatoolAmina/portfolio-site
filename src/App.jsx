@@ -10,7 +10,16 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="bg-gray-900 text-gray-200 font-sans">
+    <div
+      className="min-h-screen text-gray-200 font-sans"
+      style={{
+        background: `radial-gradient(circle at center,
+          #05081a 0%,    /* very very dark navy center */
+          #020414 70%,   /* almost black navy */
+          #00010a 100%   /* near pure black navy edges */
+        )`,
+      }}
+    >
       <Header />
       <main>
         <Hero />
@@ -24,4 +33,7 @@ function App() {
     </div>
   );
 }
+
+
+
 export default App;
