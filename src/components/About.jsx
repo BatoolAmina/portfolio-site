@@ -17,8 +17,7 @@ const About = () => {
       <section
         id="about"
         className="container mx-auto px-6 py-24 rounded-3xl
-          bg-gradient-to-br from-gray-900/95 via-gray-900/85 to-gray-800/85
-          backdrop-blur-md border border-gray-700 shadow-lg
+          backdrop-blur-md shadow-lg
           font-poppins tracking-wide max-w-6xl"
       >
         <h2
