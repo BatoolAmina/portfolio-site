@@ -48,7 +48,7 @@ const About = () => {
 
           <div className="md:w-2/3 text-center md:text-left space-y-10 max-w-xl">
             <h3 className="text-3xl font-semibold text-gray-400 leading-snug tracking-wide">
-              Who I Am
+              Who Am I?
             </h3>
             <p className="text-gray-300 text-lg leading-relaxed tracking-wide">
               I'm a Computer Science and Engineering student with a passion for
